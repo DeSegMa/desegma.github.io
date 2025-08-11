@@ -38,12 +38,15 @@ layout: default
       </div>
     {% endif %}
 
+
+
     <div class="clearfix">{{ content }}</div>
 
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
+    <br>
       <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
+        <a href="{{ '/news/' | relative_url }}" style="color: inherit">News</a>
       </h2>
       {% include news.liquid limit=true %}
     {% endif %}
@@ -76,5 +79,18 @@ layout: default
     {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
       {% include newsletter.liquid center=true %}
     {% endif %}
+
+    <br>
+    {% if page.organizers %}
+      <h2>Organizers</h2>
+      <div class="row row-cols 1 row-cols-md-3">
+        {% for organizer in site.organizers %}
+          <div class="col">
+          {% include organizer_card.liquid  %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
   </article>
 </div>

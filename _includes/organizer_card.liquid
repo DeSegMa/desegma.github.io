@@ -1,0 +1,34 @@
+<div calss="col">
+    <div class="card h-100 hoverable">
+        {% if organizer.image %}
+            {%
+                include figure.liquid
+                loading="eager"
+                path=organizer.image
+                sizes="250px"
+                alt=organizer.name
+                class="card-img-top"
+            %}
+        {% endif %}
+        <div class="card-body">
+            <h3 class="card-title"> <a href={{ organizer.webiste }}> {{ organizer.name }} </a></h3>
+            <p class="card-text">{{ organizer.affiliation }}</p>
+            <div class="row ml-1 mr-1 p-0">
+                {% if organizer.github %}
+                    <div class="github-icon">
+                        <div class="icon" data-toggle="tooltip" title="Code Repository">
+                            <a href="{{ organizer.github }}"><i class="fa-brands fa-github gh-icon"></i></a>
+                        </div>
+                    </div>
+                {% endif %}
+                {% if organizer.scholar %}
+                    <div class="scholar-icon ml-2">
+                        <div class="icon" data-toggle="tooltip" title="Google Scholar Profile">
+                            <a href="{{ organizer.scholar }}"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
