@@ -11,23 +11,13 @@
             %}
         {% endif %}
         <div class="card-body">
-            <h3 class="card-title"> <a href={{ organizer.webiste }}> {{ organizer.name }} </a></h3>
-            <p class="card-text">{{ organizer.affiliation }}</p>
-            <div class="row ml-1 mr-1 p-0">
-                {% if organizer.github %}
-                    <div class="github-icon">
-                        <div class="icon" data-toggle="tooltip" title="Code Repository">
-                            <a href="{{ organizer.github }}"><i class="fa-brands fa-github gh-icon"></i></a>
-                        </div>
-                    </div>
-                {% endif %}
-                {% if organizer.scholar %}
-                    <div class="scholar-icon ml-2">
-                        <div class="icon" data-toggle="tooltip" title="Google Scholar Profile">
-                            <a href="{{ organizer.scholar }}"><i class="fa-solid fa-magnifying-glass"></i></a>
-                        </div>
-                    </div>
-                {% endif %}
+            <h3 class="card-title"> <a href="{{ organizer.website }}"> {{ organizer.name }} </a></h3>
+            <div class="d-flex justify-content-between align-items-center">
+                <span class="card-text">{{ organizer.affiliation }}</span>
+                <div>
+                    <a href="{{ organizer.github }}"><i class="fa-brands fa-github gh-icon"></i></a>
+                    <a href="{{ organizer.scholar }}" class="ml-2"><i class="fa-solid fa-magnifying-glass"></i></a>
+                </div>
             </div>
         </div>
     </div>

@@ -18,6 +18,12 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 
 organizers: true
+
+profile:
+  align: right 
+  image: desegma_banner.png
+  image_circular: false # crops the image to make it circular
+  more_info:
 ---
 
 Desegma-IT - <b>Detection and Segmentation of Machine Generated Text in Italian</b> - is a Shared Task of the 9th evaluation campaign organized by the [EVALITA](https://www.evalita.it/) initiative. 
@@ -29,7 +35,6 @@ Beyond public opinion concerns, the European Commission will enforce compliance 
 
 Desegma-IT's shared tasks of <b>Detection</b> and <b>Segmentation</b> aim to stress-test the robustness of machine-generated text detectors by evaluating their performance under settings where the I.I.D. (independent and identically distributed) assumption does not hold. While state-of-the-art MGT detectors have reported high accuracy, such results often stem from unrealistic experimental settings: for example, relying on prior knowledge of the text generator, or failing to consider domain shifts and efficient fine-tuning - or post-tuning - strategies.
 
-<br>
 ## Important Dates
 + <b>Data Release</b>: September 22nd, 2025
 + <b>Evaluation Window</b>: dates will be announced by October 13th, 2025
