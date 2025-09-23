@@ -57,6 +57,14 @@ The performance of proposed solutions will be evaluated via <b>binary pairwise a
 <b>Label: 1</b>
 </div>
 
+##  Data description: 
+
+Data available at [this link !!!!!](https://drive.google.com/file/d/1d3qIT4acxohlRC-kwIpRPcd1q-wR3uYd/view?usp=drive_link).
+
+The dataset is a .csv file with 2 columns:
+ - `text`: The texts to classify as machine generated or human writte
+ - `label`: The ground truth, 0 means that the text is human written and 1 that it is machine generated
+
 # SubTask B: Human - Machine Text Segmentation
 In the second sub-task, participants are required to <b>detect the boundary between the human-written text and the machine-generated continuation by identifying the index of the character that marks the beginning of the MGT content</b>. Each data sample will consist of a variable-length human-written prompt, always followed by a variable-length continuation produced by the model.
 Unlike traditional MGT detection tasks that require document-level binary classification, this sub-task focuses on localization: participants must pinpoint 
@@ -78,3 +86,7 @@ The performance of proposed solutions will be evaluated via <b>Mean Absolute Err
 <br>
 <b>Target Character Index:</b> 103 
 </div>
+
+##  Data description: 
+
+Data available soon!!
