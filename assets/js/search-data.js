@@ -46,11 +46,16 @@ ninja.data = [{
             },},{id: "news-desegma-it-has-been-accepted-as-a-shared-task-of-evalita-2026",
           title: 'DeSegMA-IT has been accepted as a Shared Task of EVALITA 2026',
           description: "",
-          section: "News",},{id: "news-more-info-on-desegma-coming-soon",
-          title: 'More Info on DeSegMa coming soon',
+          section: "News",},{id: "news-subtask-a-data-release",
+          title: 'SubTask A Data Release',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/desegma_contd/";
+            },},{id: "news-registration-form",
+          title: 'Registration Form',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/desegma_register/";
             },},{id: "organizers-aesuli",
           title: 'Aesuli',
           description: "",
