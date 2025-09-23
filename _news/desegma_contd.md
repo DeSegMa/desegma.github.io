@@ -1,7 +1,7 @@
 ---
 layout: post
 title: SubTask A Data Release
-date: 2025-09-23 14:30:00
+date: 2025-09-22 14:30:00
 inline: false
 related_posts: false
 ---
