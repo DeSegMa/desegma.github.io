@@ -42,7 +42,6 @@ Find the dataset for SubTask A at [this link !!!!!](https://drive.google.com/fil
 > NOTE: Keep in mind that you should only use the training dataset we make available to train your detectors!
 
 ## Important Dates
-<!-- + <b>Evaluation Window</b>: November 24th - December 1, 2025 -->
 + <b>Data Release</b>: September 22nd, 2025
 + <b>Evaluation Window</b>: dates will be announced by October 13th, 2025
 + <b>Camera Ready Deadline</b>: February 2nd, 2026
