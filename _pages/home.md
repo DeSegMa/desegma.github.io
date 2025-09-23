@@ -35,9 +35,11 @@ Beyond public opinion concerns, the European Commission will enforce compliance 
 
 Desegma-IT's shared tasks of <b>Detection</b> and <b>Segmentation</b> aim to stress-test the robustness of machine-generated text detectors by evaluating their performance under settings where the I.I.D. (independent and identically distributed) assumption does not hold. While state-of-the-art MGT detectors have reported high accuracy, such results often stem from unrealistic experimental settings: for example, relying on prior knowledge of the text generator, or failing to consider domain shifts and efficient fine-tuning - or post-tuning - strategies.
 
-Register your team at this [google form](https://docs.google.com/forms/d/e/1FAIpQLSdAgOMmO-GK1K-w5Mn-eZQRJNTn9BQj8mQUj5_V3iZdS2vRkA/viewform?usp=dialog). We will only consider teams that registered so don't forget to do it!!
+## Team Registration
+<b>Register your team</b> at this [google form](https://docs.google.com/forms/d/e/1FAIpQLSdAgOMmO-GK1K-w5Mn-eZQRJNTn9BQj8mQUj5_V3iZdS2vRkA/viewform?usp=dialog). We will only consider teams that registered so don't forget to do it!
 
-Find the dataset for SubTask A at [this link !!!!!](https://drive.google.com/file/d/1d3qIT4acxohlRC-kwIpRPcd1q-wR3uYd/view?usp=drive_link).
+## Data Release
+Find the <b>dataset for SubTask A</b> at [this link!](https://drive.google.com/file/d/1d3qIT4acxohlRC-kwIpRPcd1q-wR3uYd/view?usp=drive_link).
 
 > **NOTE**: Check the [Tasks page](/tasks/) for more details about the tasks and the dataset. Keep in mind that you should only use the training dataset we make available to train your detectors!
 

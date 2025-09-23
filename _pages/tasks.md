@@ -59,7 +59,7 @@ The performance of proposed solutions will be evaluated via <b>binary pairwise a
 
 ##  Data description: 
 
-Data available at [this link !!!!!](https://drive.google.com/file/d/1d3qIT4acxohlRC-kwIpRPcd1q-wR3uYd/view?usp=drive_link).
+Data is now <b>[available at this link!](https://drive.google.com/file/d/1d3qIT4acxohlRC-kwIpRPcd1q-wR3uYd/view?usp=drive_link)</b>
 
 The dataset is a .csv file with 2 columns:
  - `text`: The texts to classify as machine generated or human written.
