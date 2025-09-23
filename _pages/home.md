@@ -35,7 +35,14 @@ Beyond public opinion concerns, the European Commission will enforce compliance 
 
 Desegma-IT's shared tasks of <b>Detection</b> and <b>Segmentation</b> aim to stress-test the robustness of machine-generated text detectors by evaluating their performance under settings where the I.I.D. (independent and identically distributed) assumption does not hold. While state-of-the-art MGT detectors have reported high accuracy, such results often stem from unrealistic experimental settings: for example, relying on prior knowledge of the text generator, or failing to consider domain shifts and efficient fine-tuning - or post-tuning - strategies.
 
+Register your team at this [google form](https://docs.google.com/forms/d/e/1FAIpQLSdAgOMmO-GK1K-w5Mn-eZQRJNTn9BQj8mQUj5_V3iZdS2vRkA/viewform?usp=dialog). We will only consider teams that registered so don't forget to do it!!
+
+Find the dataset for SubTask A at [this link !!!!!](https://drive.google.com/file/d/1d3qIT4acxohlRC-kwIpRPcd1q-wR3uYd/view?usp=drive_link).
+
+> NOTE: Keep in mind that you should only use the training dataset we make available to train your detectors!
+
 ## Important Dates
+<!-- + <b>Evaluation Window</b>: November 24th - December 1, 2025 -->
 + <b>Data Release</b>: September 22nd, 2025
 + <b>Evaluation Window</b>: dates will be announced by October 13th, 2025
 + <b>Camera Ready Deadline</b>: February 2nd, 2026
