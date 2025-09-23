@@ -39,7 +39,7 @@ Register your team at this [google form](https://docs.google.com/forms/d/e/1FAIp
 
 Find the dataset for SubTask A at [this link !!!!!](https://drive.google.com/file/d/1d3qIT4acxohlRC-kwIpRPcd1q-wR3uYd/view?usp=drive_link).
 
-> NOTE: Keep in mind that you should only use the training dataset we make available to train your detectors!
+> **NOTE**: Check the Tasks page (Top right) for more details about the tasks and the dataset. Keep in mind that you should only use the training dataset we make available to train your detectors!
 
 ## Important Dates
 + <b>Data Release</b>: September 22nd, 2025
