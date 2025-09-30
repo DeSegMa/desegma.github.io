@@ -89,4 +89,6 @@ The performance of proposed solutions will be evaluated via <b>Mean Absolute Err
 
 ##  Data description: 
 
-Data available soon!!
+Data is now <b>[available at this link!](https://drive.google.com/file/d/186tt5c7k7VYLHgyXIsqZACK7Qa_b5EPY/view?usp=drive_link)</b>
+
+<!-- The dataset is a .csv file with 3 columns: -->
