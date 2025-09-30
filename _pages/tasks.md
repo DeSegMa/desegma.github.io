@@ -91,4 +91,77 @@ The performance of proposed solutions will be evaluated via <b>Mean Absolute Err
 
 Data is now <b>[available at this link!](https://drive.google.com/file/d/186tt5c7k7VYLHgyXIsqZACK7Qa_b5EPY/view?usp=drive_link)</b>
 
-<!-- The dataset is a .csv file with 3 columns: -->
+The dataset is a .csv file with 3 columns:
+- `human`: The initial part of the text, written by a human.
+- `llm`: The Machine-generated continuation. Note that `human` and `llm` are meant to be concatenated into a unique input for the model.
+- `human_len`: The index of the first character outputted by the language model.
+
+#### Expected Output
+For each input text, systems must return a single integer:
+- the predicted index (in terms of characters) where the human part ends and the machine part begins.
+- This index should correspond to the character length of the human-authored portion (i.e., `human_len`).
+
+For the sake of clarity, we also provide here the evaluation script we used to evaluate the baseline model
+
+```python
+from sklearn.metrics import mean_absolute_error
+
+def compute_metrics(input_ids, preds, h_lens, tokenizer):
+    """
+    Calculates the MAE score based on model predictions.
+
+    Args:
+        input_ids: A batch of tokenized input sequences (`human` + `llm` cols, of the csv data).
+        preds: A batch of model predictions. In the baseline model scenario, this is a binary tensor 
+               where '1' marks the first machine-generated token.
+        h_lens: A list of the true character lengths of the human-written texts (i.e., `human_len`).
+        tokenizer: The tokenizer used to encode the text.
+    """
+    first_indices = []
+    # 1. Find the first predicted machine-generated token for each sequence.
+    for pred in preds:
+        # Find the index of the first '1' in the prediction tensor.
+        idx = pred.nonzero(as_tuple=False)[0].item()
+        first_indices.append(idx)
+    
+    sequences = []
+    # 2. Decode the predicted human-written part back to text.
+    for i, sequence in enumerate(input_ids):
+        # Decode tokens from the beginning up to the predicted boundary.
+        sequences.append(tokenizer.decode(sequence[:first_indices[i]], skip_special_tokens=True))
+    
+    # 3. Calculate the character length of the decoded text.
+    pred_lens = [len(seq) for seq in sequences]
+    
+    # 4. Compute the MAE between predicted lengths and true lengths.
+    mae = mean_absolute_error(y_true=h_lens, y_pred=pred_lens)
+    return mae
+
+# Testing the MAE metric...
+tokenizer = SomeTokenizer
+
+human = "This is the human part and"
+llm = " this is the LLM part."
+# combined = human + llm
+text = human + llm
+
+inputs = tokenizer(text, return_tensors="pt")
+input_ids = inputs.input_ids    # shape ([1, 15])
+
+# suppose the model predicted the segmentation at token index 7 (i.e., perfect prediction)
+preds = torch.zeros_like(input_ids)
+preds[0, 7:] = 1
+
+h_lens = torch.tensor([len(human)])  # length of human part
+mae = compute_metrics(input_ids, preds, h_lens, tokenizer)
+print(f"Test MAE (good prediction): {mae}")
+# Test MAE (good prediction): 0.0
+
+# now let's suppose the model has selected index 4 as the starting token of the LLM part
+preds = torch.zeros_like(input_ids)
+preds[0, 4:] = 1
+
+mae = compute_metrics(input_ids, preds, h_lens, tokenizer)
+print(f"Test MAE (wrong prediction): {mae}")
+# Test MAE (wrong prediction): 15.0
+```
