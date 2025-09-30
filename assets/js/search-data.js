@@ -56,6 +56,11 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/desegma_register/";
+            },},{id: "news-subtask-b-data-release",
+          title: 'SubTask B Data Release',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/desegma_subtaskB/";
             },},{id: "organizers-aesuli",
           title: 'Aesuli',
           description: "",
