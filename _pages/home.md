@@ -47,6 +47,6 @@ Desegma-IT's shared tasks of <b>Detection</b> and <b>Segmentation</b> aim to str
 
 ## Important Dates
 + <b>Data Release</b>: September 22nd, 2025
-+ <b>Evaluation Window</b>: dates will be announced by October 13th, 2025
++ <b>Evaluation Window</b>: November 24th - December 1st
 + <b>Camera Ready Deadline</b>: February 2nd, 2026
 + <b>Workshop Date</b>: February 26th-27th, 2026, Bari (Italy)
