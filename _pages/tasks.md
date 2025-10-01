@@ -106,62 +106,82 @@ For the sake of clarity, we also provide here the evaluation script we used to e
 ```python
 from sklearn.metrics import mean_absolute_error
 
-def compute_metrics(input_ids, preds, h_lens, tokenizer):
-    """
-    Calculates the MAE score based on model predictions.
 
-    Args:
-        input_ids: A batch of tokenized input sequences (`human` + `llm` cols, of the csv data).
-        preds: A batch of model predictions. In the baseline model scenario, this is a binary tensor 
-               where '1' marks the first machine-generated token.
-        h_lens: A list of the true character lengths of the human-written texts (i.e., `human_len`).
-        tokenizer: The tokenizer used to encode the text.
+def get_baseline_predictions(input_ids, logits, tokenizer):
     """
-    first_indices = []
-    # 1. Find the first predicted machine-generated token for each sequence.
-    for pred in preds:
-        # Find the index of the first '1' in the prediction tensor.
-        idx = pred.nonzero(as_tuple=False)[0].item()
-        first_indices.append(idx)
+    This is the function that takes care of converting the baseline model
+    logits to the predicted switch-indices.
+
+    Convert model logits into predicted boundary positions (in characters).
     
-    sequences = []
-    # 2. Decode the predicted human-written part back to text.
+    Args:
+        input_ids (torch.Tensor): Tokenized input sequences (batch_size x seq_len).
+        logits (torch.Tensor): Model output logits (batch_size x seq_len x num_labels).
+                              Each position typically has scores for classes like {0 = human, 1 = switch}.
+        tokenizer (PreTrainedTokenizer): Hugging Face tokenizer used to decode tokens.
+    
+    Returns:
+        List[int]: Predicted human segment lengths in characters for each sequence.
+    """
+    # Take the class with highest probability at each token
+    preds = logits.argmax(dim=-1)
+
+    sequence_lengths = []
     for i, sequence in enumerate(input_ids):
-        # Decode tokens from the beginning up to the predicted boundary.
-        sequences.append(tokenizer.decode(sequence[:first_indices[i]], skip_special_tokens=True))
+        # Find the first token predicted as "machine" (the switch point)
+        idx = preds[i].nonzero(as_tuple=False)[0].item()
+
+        if idx.numel() > 0:
+            # Take the first predicted switch
+            idx = idx[0].item()
+        else:
+            # Fallback: if no switch is predicted, assume end of sequence
+            idx = len(sequence)
+
+        # Decode the sequence up to that point, then measure its character length
+        sequence_lengths.append(
+            len(tokenizer.decode(sequence[:idx], skip_special_tokens=True))
+        )
     
-    # 3. Calculate the character length of the decoded text.
-    pred_lens = [len(seq) for seq in sequences]
+    return sequence_lengths
+
+
+def compute_metric(true_lens, pred_lens):
+    """
+    Compute the evaluation metric (Mean Absolute Error).
     
-    # 4. Compute the MAE between predicted lengths and true lengths.
-    mae = mean_absolute_error(y_true=h_lens, y_pred=pred_lens)
+    Args:
+        true_lens (List[int]): Gold standard human segment lengths (in characters).
+        pred_lens (List[int]): Predicted human segment lengths (in characters).
+    
+    Returns:
+        float: Mean Absolute Error between predictions and gold labels.
+    """
+    mae = mean_absolute_error(y_true=true_lens, y_pred=pred_lens)
     return mae
 
-# Testing the MAE metric...
+
+# Testing the metric...
 tokenizer = SomeTokenizer
+baseline = SomeModel
 
 human = "This is the human part and"
 llm = " this is the LLM part."
-# combined = human + llm
+
+# combined = human + llm: "This is the human part and this is the LLM part."
 text = human + llm
 
 inputs = tokenizer(text, return_tensors="pt")
 input_ids = inputs.input_ids    # shape ([1, 15])
+ouput = baseline(input_ids)
 
-# suppose the model predicted the segmentation at token index 7 (i.e., perfect prediction)
-preds = torch.zeros_like(input_ids)
-preds[0, 7:] = 1
+# preds_lens is a list of predicted lengths in characters, e.g. [4]
+pred_lens = get_baseline_predictions(input_ids, output, tokenizer)
 
-h_lens = torch.tensor([len(human)])  # length of human part
-mae = compute_metrics(input_ids, preds, h_lens, tokenizer)
-print(f"Test MAE (good prediction): {mae}")
-# Test MAE (good prediction): 0.0
+# true_lens is list of true lengths in characters, e.g. [15] (`human_len` col in the dataset)
+true_lens = [len(human)]
 
-# now let's suppose the model has selected index 4 as the starting token of the LLM part
-preds = torch.zeros_like(input_ids)
-preds[0, 4:] = 1
-
-mae = compute_metrics(input_ids, preds, h_lens, tokenizer)
-print(f"Test MAE (wrong prediction): {mae}")
-# Test MAE (wrong prediction): 15.0
+mae = compute_metric(true_lens, pred_lens)
+print(f"True len: {true_lens}, Pred len: {pred_lens}, MAE: {mae}")
+# True len: [15], Pred len: [4], MAE: 11.0
 ```
