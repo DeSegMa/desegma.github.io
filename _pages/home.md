@@ -52,7 +52,9 @@ Desegma-IT's shared tasks of <b>Detection</b> and <b>Segmentation</b> aim to str
 - Find the <b>Test Dataset for SubTask A</b> at [this link!](https://drive.google.com/file/d/1209X1tJUE3izT85HoZt7tbFElpqhuYcK/view?usp=drive_link).
 - Find the <b>Test Dataset for SubTask B</b> at [this link!](https://drive.google.com/file/d/1g-NXD_zNtKd7uEQm2d4GOvyYu7ydRsLF/view?usp=drive_link).
 
-> **NOTE**: Check the [Tasks page](/tasks/) for more details about the tasks and the dataset. Keep in mind that you should only use the training dataset we make available to train your detectors!
+> **NOTE (1)**: Check the [Tasks page](/tasks/) for more details about the tasks and the dataset. Keep in mind that you should only use the training dataset we make available to train your detectors!
+
+> **NOTE (2)**: Only the scores on the Test set will be used for the final ranking!
 
 ## Important Dates
 + <b>Data Release</b>: September 22nd, 2025
