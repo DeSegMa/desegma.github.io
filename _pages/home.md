@@ -39,9 +39,18 @@ Desegma-IT's shared tasks of <b>Detection</b> and <b>Segmentation</b> aim to str
 <b>Register your team</b> at this [google form](https://docs.google.com/forms/d/e/1FAIpQLSdAgOMmO-GK1K-w5Mn-eZQRJNTn9BQj8mQUj5_V3iZdS2vRkA/viewform?usp=dialog). We will only consider teams that registered so don't forget to do it!
 
 ## Data Release
-- Find the <b>dataset for SubTask A</b> at [this link!](https://drive.google.com/file/d/1d3qIT4acxohlRC-kwIpRPcd1q-wR3uYd/view?usp=drive_link).
-- Find the <b>dataset for SubTask B</b> at [this link!](https://drive.google.com/file/d/186tt5c7k7VYLHgyXIsqZACK7Qa_b5EPY/view?usp=drive_link).
 
+### Training Dataset
+- Find the <b>Training Dataset for SubTask A</b> at [this link!](https://drive.google.com/file/d/1d3qIT4acxohlRC-kwIpRPcd1q-wR3uYd/view?usp=drive_link).
+- Find the <b>Training Dataset for SubTask B</b> at [this link!](https://drive.google.com/file/d/186tt5c7k7VYLHgyXIsqZACK7Qa_b5EPY/view?usp=drive_link).
+
+### Development Dataset
+- Find the <b>Development Dataset for SubTask A</b> at [this link!](https://drive.google.com/file/d/1n1ADHF_Qh-vvaDr-dBY4qt7c1Rob7HoN/view?usp=sharing).
+- Find the <b>Development Dataset for SubTask B</b> at [this link!](https://drive.google.com/file/d/1CW4rjOl8vNSiMRteUqJt76yawkTszHLx/view?usp=sharing).
+
+### Test Dataset
+- Find the <b>Test Dataset for SubTask A</b> at [this link!](https://drive.google.com/file/d/1209X1tJUE3izT85HoZt7tbFElpqhuYcK/view?usp=drive_link).
+- Find the <b>Test Dataset for SubTask B</b> at [this link!](https://drive.google.com/file/d/1g-NXD_zNtKd7uEQm2d4GOvyYu7ydRsLF/view?usp=drive_link).
 
 > **NOTE**: Check the [Tasks page](/tasks/) for more details about the tasks and the dataset. Keep in mind that you should only use the training dataset we make available to train your detectors!
 
