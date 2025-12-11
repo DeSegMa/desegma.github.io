@@ -1,4 +1,10 @@
-# DeSegMa - IT Leaderboard
+---
+layout: page 
+title: DeSegMa - IT Leaderboard
+permalink: /results/
+nav: true
+---
+
 
 ## SubTask A
 
@@ -9,6 +15,8 @@
 | 3        | UniTor                        | 0.928774    |
 | 4        | Nicla                         | 0.924348    |
 | 5        | Stocastic Gradient Descenders | 0.921638    |
+
+
 
 ## SubTask B
 
