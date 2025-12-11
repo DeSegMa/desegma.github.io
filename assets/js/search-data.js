@@ -16,6 +16,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/data/";
           },
+        },{id: "nav-desegma-it-leaderboard",
+          title: "DeSegMa - IT Leaderboard",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/results/";
+          },
         },{id: "nav-tasks",
           title: "Tasks",
           description: "",
