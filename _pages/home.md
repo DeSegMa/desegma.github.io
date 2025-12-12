@@ -48,13 +48,18 @@ After registering to the task you can register on codabench and access the submi
 - Find the <b>Training Dataset for SubTask A</b> at [this link!](https://drive.google.com/file/d/1d3qIT4acxohlRC-kwIpRPcd1q-wR3uYd/view?usp=drive_link).
 - Find the <b>Training Dataset for SubTask B</b> at [this link!](https://drive.google.com/file/d/186tt5c7k7VYLHgyXIsqZACK7Qa_b5EPY/view?usp=drive_link).
 
-### Development Dataset
+<!-- ### Development Dataset
 - Find the <b>Development Dataset for SubTask A</b> at [this link!](https://drive.google.com/file/d/1n1ADHF_Qh-vvaDr-dBY4qt7c1Rob7HoN/view?usp=sharing).
-- Find the <b>Development Dataset for SubTask B</b> at [this link!](https://drive.google.com/file/d/1CW4rjOl8vNSiMRteUqJt76yawkTszHLx/view?usp=sharing).
+- Find the <b>Development Dataset for SubTask B</b> at [this link!](https://drive.google.com/file/d/1CW4rjOl8vNSiMRteUqJt76yawkTszHLx/view?usp=sharing). -->
 
 ### Test Dataset
 - Find the <b>Test Dataset for SubTask A</b> at [this link!](https://drive.google.com/file/d/1209X1tJUE3izT85HoZt7tbFElpqhuYcK/view?usp=drive_link).
-- Find the <b>Test Dataset for SubTask B</b> at [this link!](https://drive.google.com/file/d/1g-NXD_zNtKd7uEQm2d4GOvyYu7ydRsLF/view?usp=drive_link).
+- Find the <b>Test Dataset for SubTask B</b> at [this link!](https://drive.google.com/file/d/1ctG9qtyDLO3p9xpAnEAIDTiLAD3H4LbV/view?usp=drive_link).
+
+### Test Dataset with Labels
+
+- <b>Test Dataset with labels for SubTask A</b>: [Download Here](https://drive.google.com/file/d/1yYrNytTxtG044tpww1FSC1KJ0Q2cvO_C/view?usp=drive_link).
+- <b>Test Dataset with labels for SubTask B</b>: [Download Here](https://drive.google.com/file/d/1T-ZpXqMCMQZcD_gK6d2vyISWMLcYMKYb/view?usp=drive_link).
 
 > **NOTE (1)**: Check the [Tasks page](/tasks/) for more details about the tasks and the dataset. Keep in mind that you should only use the training dataset we make available to train your detectors!
 
