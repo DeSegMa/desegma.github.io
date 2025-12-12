@@ -14,7 +14,7 @@ nav: true
 | 2        | Kenji Endo                    | 0.942649    |
 | 3        | UniTor                        | 0.928774    |
 | 4        | Nicla                         | 0.924348    |
-| 5        | Stocastic Gradient Descenders | 0.921638    |
+| 5        | Stochastic Gradient Descenders | 0.921638    |
 
 
 
@@ -22,7 +22,7 @@ nav: true
 
 | Position | Team Name                     | MAE    |
 | -------- | ----------------------------- | ------ |
-| 1        | Stocastic Gradient Descenders | 52.54  |
+| 1        | Stochastic Gradient Descenders | 52.54  |
 | 2        | MINDS                         | 56.53  |
 | 3        | Gradient Descenders           | 62.66  |
 | 4        | UniTor                        | 81.6   |
